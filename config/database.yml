@@ -15,8 +15,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: postgres
-  password: mydatabase
+  username: rmbugua
   host: localhost
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -82,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: mvrva_transport_back_end_production
-  username: mvrva_transport_back_end
-  password: <%= ENV["MVRVA_TRANSPORT_BACK_END_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
